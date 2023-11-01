@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Meu Banner Animado</title>
+    <style>
+        body {
+    background: linear-gradient(white, lightgray, gray, black);
+}
+
+        .espanha {
+        text-align: center;
+        }
+        #banner {
+            width: 100%;
+            height: 100px;
+            background-color: #000000;
+            color: #ff0000;
+            text-align: center;
+            line-height: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #mensagem {
+            position: absolute;
+            left: -200px; /* Inicialmente, a mensagem está fora da tela à esquerda */
+            white-space: nowrap;
+            font-size: 30px;
+        }
+            .acao {
+            text-align: center;
+            }
+
+        .produtos li {
+	        display: inline-block;
+	        text-align: center;
+	        width: 30%;
+	        vertical-align: top;
+	        margin: 0 1.5%;
+	        padding: 30px 20px;
+            box-sizing: border-box;
+	        border: 2px solid #000000;
+	        border-radius: 10px;
+
+}
+
+        #aranha {
+            width: 70%;
+         }
+
+         #ultimato {
+            width: 72%;
+         }
+
+         #ninguem {
+            width: 80%;
+         }
+
+         #guy {
+            width: 90% ;
+         }
+
+         #dino {
+            width: 77%;
+         }
+
+         #bat {
+            width: 70%;
+         }
+
+         #vefu {
+            width: 65%;
+         }
+
+         #nope {
+            width: 73%;
+         }
+
+         #avatar {
+            width: 70%;
+         }
+
+         footer {
+	text-align: center;
+	background: url("bg.jpg");
+	padding: 40px 0;
+}
+
+.copyright {
+	color: #FFFFFF;
+	font-size: 13px;
+	margin: 20px 0 0;
+}  
+
+#logo {
+    width: 10%;
+}
+
+        .link {
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+    
+<div id="banner">
+    <div id="mensagem">Filmes de Ação/Ficção científica</div>
+
+</div>
+
+<main>
+    <ul class="produtos">
+        <li>
+            <h2>Transformers: A Vingança dos Derrotados </h2>
+            <img src="transformers.png">
+        </li>
+        <li>
+            <h2>Homem-Aranha: Através do Aranhaverso</h2>
+            <img src="homem_aranha.jpg" id="aranha">
+        </li>
+        <li>
+            <h2>Vingadores: Ultimato</h2>
+            <img src="ultimato.jfif" id="ultimato">
+        </li>
+        <li>
+            <h2>Ninguém Vai te Salvar</h2>
+            <img src="ninguem.jpg" id="ninguem">
+        </li>
+        <li>
+            <h2>Free Guy</h2>
+            <img src="guy.jpg" id="guy">
+        </li>
+        <li>
+            <h2>Jurassic World: Domínio</h2>
+            <img src="dino.jpg" id="dino">
+        </li>
+        <li>
+            <h2>The Batman</h2>
+            <img src="bat.jpg" id="bat">
+        </li>
+        <li>
+            <h2>Velozes e Furiosos X</h2>
+            <img src="vefu.jpg" id="vefu">
+        </li>
+        <li>
+            <h2>Não! Não Olhe!</h2>
+            <img src="nope.webp" id="nope">
+        </li>
+        <li>
+            <h2>Avatar: O Caminho da Água</h2>
+            <img src="avatar.jpeg" id="avatar">
+        </li>
+    </ul>
+</main>
+
+<script>
+    var mensagemElement = document.getElementById("mensagem");
+    var bannerWidth = document.getElementById("banner").offsetWidth;
+
+    function animarMensagem() {
+        var left = -200; // Inicializa a posição à esquerda da tela
+        var interval = setInterval(function() {
+            left += 5; // Move 5 pixels à direita a cada iteração
+            mensagemElement.style.left = left + "px";
+
+            // Verifica se a mensagem atingiu o final do banner
+            if (left >= bannerWidth) {
+                clearInterval(interval); // Para a animação
+                setTimeout(function() {
+                    mensagemElement.style.left = "-200px"; // Reinicia a mensagem à esquerda
+                    animarMensagem(); // Inicia a animação novamente
+                }, 1000); // Espera 1 segundo antes de reiniciar
+            }
+        }, 30); // Intervalo de 30 milissegundos para suavizar a animação
+    }
+
+    animarMensagem(); // Inicia a animação quando a página carrega
+</script>
+
+
+<div class="link">
+    <li><a href="pg2.html">Cadastro de Produtos</a></li>
+    </div>
+
+<div class="link">
+    <li><a href="pg3.html">Desconto</a></li>
+    </div>
+
+<div class="link">
+    <li><a href="pg4.html">Cadastro de Usuário</a></li>
+    </div>
+
+<div class="link">
+    <li><a href="pg5.html">Classifique</a></li>
+    </div>
+    
+<footer>
+    <img src="logo-removebg-preview.png" id="logo">
+    <p class="copyright">&copy;Copyright Filmes.com - 2023</p>
+</footer>
+
+</body>
+</html>

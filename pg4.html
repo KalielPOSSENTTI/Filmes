@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Cadastro de Usuário</h1>
+<form id="cadastroForm">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome"><br><br>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email"><br><br>
+
+                <label for="codigo">Código</label>
+                <input type="password" id="codigo" name="codigo"><br><br>
+
+                <button type="button" onclick="cadastrarusuario()">Cadastro</button>
+
+</form>
+
+    <div id="mensagem"></div>
+
+        <script>
+        function cadastrarusuario(){
+            var nome = document.getElementById("nome").value;
+            var email = document.getElementById("email").value;
+            var codigo = document.getElementById("codigo").value;
+
+            if (nome === "" || email === "" || codigo === "") {
+                document.getElementById("mensagem").innerHTML = "Por favor, preencha todos os campos.";
+                return;
+            }
+
+            var usuario = {
+                nome: nome,
+                email: email,
+                codigo: codigo
+            };
+
+            console.log("Usuário cadatrado: ", usuario);
+
+            document.getElementById("cadastroForm").reset();
+            document.getElementById("mensagem").innerHTML = "Cadastro realizado com sucesso";
+        }
+    </script>
+
+<div class="link">
+    <li><a href="index.html">Home</a></li>
+
+<div class="link">
+    <li><a href="pg2.html">Cadastro de Produtos</a></li>
+
+<div class="link">
+    <li><a href="pg3.html">Desconto</a></li>  
+
+<div class="link">
+    <li><a href="pg5.html">Classifique</a></li>
+
+</body>
+</html>
